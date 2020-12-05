@@ -12,14 +12,20 @@ const FriendsList = () => {
         axiosWithAuth().get("http://localhost:5000/api/friends")
         .then(res=>{
             console.log(res)
+            setFriendsList(res.data)
         })
         .catch(err => {
             console.log(err)
+            setError(err.message)
         })
     })
     return (
         <div>
-            Friends List Here
+            {friendsList.map((friend)=>{
+                return <div>
+                    {friend.name}
+                </div>
+            })}
         </div>
     )
 }
