@@ -21,8 +21,9 @@ const LogIn = () => {
         e.preventDefault()
         axios.post("http://localhost:5000/api/login", logIn)
         .then(res => {
-            console.log('ol: LogIn.js: login res:', res)
-            
+            console.log('ol: LogIn.js: login res:', res.data.payload)
+            localStorage.setItem('token',res.data.payload)
+            history.push('/friendslist')
         })
     }
     return (
