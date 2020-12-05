@@ -6,7 +6,7 @@ const Navigation = () => {
         <Navbar color='dark'>
             <Nav>
                 <NavLink href="/">Home</NavLink>
-                <NavLink href="/">Log-In</NavLink>
+                <NavLink href="/login">Log-In</NavLink>
                 <NavLink href="/">Friends List</NavLink>
             </Nav>
         </Navbar>
