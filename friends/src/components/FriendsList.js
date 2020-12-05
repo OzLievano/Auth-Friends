@@ -2,6 +2,7 @@ import Axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import axiosWithAuth from '../utils/axiosWithAuth'
+import AddFriendForm from './AddFriendForm'
 
 const FriendsList = () => {
     const [friendsList,setFriendsList] = useState([])
@@ -18,11 +19,12 @@ const FriendsList = () => {
             console.log(err)
             setError(err.message)
         })
-    })
+    },[])
     return (
         <div>
+            <AddFriendForm/>
             {friendsList.map((friend)=>{
-                return <div>
+                return <div key={friend.id}>
                     {friend.name}
                 </div>
             })}
